@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Tabs from "./Tabs.jsx";
-import { API_BASE } from "../config";
+import { apiUrl } from "../config";
 
 export default function SingleIOCView() {
   const [ioc, setIoc] = useState("");
@@ -43,9 +43,7 @@ export default function SingleIOCView() {
     setLoading(true);
     
     try {
-      const res = await axios.get(
-        `${API_BASE}/analyze/${detectedType}/${encodeURIComponent(ioc)}`
-      );
+      const res = await axios.get(apiUrl(`/analyze/${detectedType}/${encodeURIComponent(ioc)}`));
       setResult(res.data);
     } catch (e) {
       console.error("Error analyzing IOC", e);
