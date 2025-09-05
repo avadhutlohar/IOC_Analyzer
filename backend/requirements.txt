@@ -6,3 +6,4 @@ aioredis
 python-whois
 ipwhois
 python-dotenv
+redis>=4.2.0
