@@ -25,13 +25,6 @@ A comprehensive web application for analyzing Indicators of Compromise (IOCs) wi
 - **Shodan**: Internet-connected device information
 - **WHOIS**: Domain registration information
 
-### UI Features
-- **Retro Terminal Design**: Dark theme with green terminal colors
-- **Square Borders**: Clean, geometric design elements
-- **Responsive Layout**: Works on desktop and mobile devices
-- **Dark Mode Support**: Automatic theme detection
-- **Interactive Tables**: Sortable and expandable result views
-
 ## Technology Stack
 
 ### Frontend
@@ -194,10 +187,6 @@ The application uses a custom retro theme with:
 5. Push to the branch: `git push origin feature-name`
 6. Submit a pull request
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Security Considerations
 
 - API keys are stored securely in environment variables
@@ -205,36 +194,3 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - All external API calls are made server-side
 - Input validation prevents injection attacks
 - CORS is properly configured for security
-
-## Troubleshooting
-
-### Common Issues
-
-**Backend won't start:**
-- Check Python version (3.13+ required)
-- Verify all dependencies are installed
-- Ensure .env file is properly configured
-
-**Frontend build errors:**
-- Clear node_modules and reinstall: `rm -rf node_modules && npm install`
-- Check Node.js version (18+ required)
-
-**API rate limits:**
-- Some APIs have rate limits; the application includes caching to minimize requests
-- Consider upgrading to paid API tiers for higher limits
-
-**No results returned:**
-- Verify API keys are correct and active
-- Check network connectivity
-- Review backend logs for error messages
-
-## Support
-
-For issues, questions, or contributions, please:
-1. Check existing issues in the repository
-2. Create a new issue with detailed information
-3. Include logs and error messages when reporting bugs
-
----
-
-**Note**: This tool is for legitimate security research and threat analysis only. Users are responsible for complying with all applicable laws and API terms of service.
