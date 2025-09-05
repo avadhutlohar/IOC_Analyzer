@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+aiohttp
+aiosqlite
+aioredis
+python-whois
+ipwhois
+python-dotenv
