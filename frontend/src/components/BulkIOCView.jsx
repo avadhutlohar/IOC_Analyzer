@@ -132,7 +132,7 @@ export default function BulkIOCView() {
           rows={6}
           value={textInput}
           onChange={(e) => setTextInput(e.target.value)}
-          placeholder="Enter IOCs here:\n• IP addresses: 192.168.1.1\n• Domains: example.com\n• URLs: https://example.com/path\n• Hashes: MD5/SHA1/SHA256\n\nSeparate multiple IOCs with commas or new lines"
+          placeholder="Enter IOCs here: One IOC per line. Separate multiple IOCs with commas or new lines"
           className="border-3 border-retro-dark-border shadow-retro-inset p-2 w-full bg-custom-light-bg dark:bg-custom-dark-gray text-custom-dark-gray dark:text-custom-cream placeholder-custom-gray dark:placeholder-custom-light-gray focus:ring-2 focus:ring-retro-terminal-green focus:border-retro-terminal-green"
         />
 
