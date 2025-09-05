@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import BulkTable from "./BulkTable.jsx";
 import Tabs from "./Tabs.jsx";
+import { API_BASE } from "../config";
 
 export default function BulkIOCView() {
   const [textInput, setTextInput] = useState("");
@@ -75,7 +76,7 @@ export default function BulkIOCView() {
       // Analyze each group separately
       const allRows = [];
       for (const [type, iocs] of Object.entries(groupedIOCs)) {
-        const res = await axios.post("http://localhost:8000/analyze/bulk", {
+        const res = await axios.post(`${API_BASE}/analyze/bulk`, {
           type: type,
           values: iocs,
         });
@@ -102,7 +103,7 @@ export default function BulkIOCView() {
       const detectedType = detectIOCType(ioc);
       setExpandedIocType(detectedType);
       const res = await axios.get(
-        `http://localhost:8000/analyze/${detectedType}/${encodeURIComponent(ioc)}`
+        `${API_BASE}/analyze/${detectedType}/${encodeURIComponent(ioc)}`
       );
       setExpandedData(res.data.results);
     } catch (e) {

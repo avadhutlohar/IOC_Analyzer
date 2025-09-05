@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Tabs from "./Tabs.jsx";
+import { API_BASE } from "../config";
 
 export default function SingleIOCView() {
   const [ioc, setIoc] = useState("");
@@ -43,7 +44,7 @@ export default function SingleIOCView() {
     
     try {
       const res = await axios.get(
-        `http://localhost:8000/analyze/${detectedType}/${encodeURIComponent(ioc)}`
+        `${API_BASE}/analyze/${detectedType}/${encodeURIComponent(ioc)}`
       );
       setResult(res.data);
     } catch (e) {
