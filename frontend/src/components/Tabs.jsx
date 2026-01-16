@@ -91,16 +91,16 @@ export default function Tabs({ results, iocType, ioc }) {
       <ul className="list-disc ml-6 space-y-1">
         {results.abuseipdb && !results.abuseipdb.error && results.abuseipdb.data && (
           <li>AbuseIPDB Score: {results.abuseipdb.data.abuseConfidenceScore || 'N/A'}% 
-            <a href={toolLinks.abuseipdb} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.abuseipdb} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.abuseipdb?.error && (
-          <li className="text-custom-blue dark:text-custom-light-blue">AbuseIPDB: {typeof results.abuseipdb.error === 'object' ? (results.abuseipdb.error.message || JSON.stringify(results.abuseipdb.error)) : results.abuseipdb.error}</li>
+          <li className="text-accent-primary dark:text-accent-secondary">AbuseIPDB: {typeof results.abuseipdb.error === 'object' ? (results.abuseipdb.error.message || JSON.stringify(results.abuseipdb.error)) : results.abuseipdb.error}</li>
         )}
         
         {results.otx && !results.otx.error && results.otx.pulse_info && (
           <li>OTX Pulses: {results.otx.pulse_info.count || 'N/A'} 
-            <a href={toolLinks.otx} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.otx} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.otx?.error && (
@@ -109,7 +109,7 @@ export default function Tabs({ results, iocType, ioc }) {
         
         {results.shodan && !results.shodan.error && results.shodan.asn && (
           <li>Shodan ASN: {results.shodan.asn} 
-            <a href={toolLinks.shodan} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.shodan} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.shodan?.error && (
@@ -127,7 +127,7 @@ export default function Tabs({ results, iocType, ioc }) {
             {results.virustotal.data.attributes.crowdsourced_context?.length > 0 && (
               <span className="text-red-600 font-semibold"> ⚠️ Threat alerts detected</span>
             )}
-            <a href={toolLinks.virustotal} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.virustotal} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.virustotal?.error && (
@@ -138,7 +138,7 @@ export default function Tabs({ results, iocType, ioc }) {
           <li>
             WHOIS ASN: {results.whois.asn || "N/A"} | Country:{" "}
             {results.whois.asn_country_code || "N/A"}
-            <a href={toolLinks.whois} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.whois} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.whois?.error && (
@@ -153,7 +153,7 @@ export default function Tabs({ results, iocType, ioc }) {
       <ul className="list-disc ml-6 space-y-1">
         {results.otx && !results.otx.error && results.otx.pulse_info && (
           <li>OTX Pulses: {results.otx.pulse_info.count || 'N/A'} 
-            <a href={toolLinks.otx} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.otx} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.otx?.error && (
@@ -171,7 +171,7 @@ export default function Tabs({ results, iocType, ioc }) {
             {results.virustotal.data.attributes.crowdsourced_context?.length > 0 && (
               <span className="text-red-600 font-semibold"> ⚠️ Threat alerts detected</span>
             )}
-            <a href={toolLinks.virustotal} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.virustotal} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.virustotal?.error && (
@@ -181,7 +181,7 @@ export default function Tabs({ results, iocType, ioc }) {
         {results.whois && !results.whois.error && (
           <li>
             WHOIS Org: {results.whois.org || "N/A"} | Country: {results.whois.country || "N/A"}
-            <a href={toolLinks.whois} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.whois} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.whois?.error && (
@@ -196,7 +196,7 @@ export default function Tabs({ results, iocType, ioc }) {
       <ul className="list-disc ml-6 space-y-1">
         {results.otx && !results.otx.error && results.otx.pulse_info && (
           <li>OTX Pulses: {results.otx.pulse_info.count || 'N/A'} 
-            <a href={toolLinks.otx} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.otx} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.otx?.error && (
@@ -214,7 +214,7 @@ export default function Tabs({ results, iocType, ioc }) {
             {results.virustotal.data.attributes.crowdsourced_context?.length > 0 && (
               <span className="text-red-600 font-semibold"> ⚠️ Threat alerts detected</span>
             )}
-            <a href={toolLinks.virustotal} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.virustotal} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.virustotal?.error && (
@@ -224,7 +224,7 @@ export default function Tabs({ results, iocType, ioc }) {
         {results.whois && !results.whois.error && (
           <li>
             WHOIS Org: {results.whois.org || "N/A"} | Country: {results.whois.country || "N/A"}
-            <a href={toolLinks.whois} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.whois} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.whois?.error && (
@@ -239,7 +239,7 @@ export default function Tabs({ results, iocType, ioc }) {
       <ul className="list-disc ml-6 space-y-1">
         {results.otx && !results.otx.error && results.otx.pulse_info && (
           <li>OTX Pulses: {results.otx.pulse_info.count || 'N/A'} 
-            <a href={toolLinks.otx} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.otx} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.otx?.error && (
@@ -257,7 +257,7 @@ export default function Tabs({ results, iocType, ioc }) {
             {results.virustotal.data.attributes.crowdsourced_context?.length > 0 && (
               <span className="text-red-600 font-semibold"> ⚠️ Threat alerts detected</span>
             )}
-            <a href={toolLinks.virustotal} target="_blank" rel="noopener noreferrer" className="ml-2 text-custom-blue dark:text-custom-light-blue hover:underline text-sm">[View Details]</a>
+            <a href={toolLinks.virustotal} target="_blank" rel="noopener noreferrer" className="ml-2 text-accent-primary dark:text-accent-secondary hover:underline text-sm">[View Details]</a>
           </li>
         )}
         {results.virustotal?.error && (
@@ -352,13 +352,50 @@ export default function Tabs({ results, iocType, ioc }) {
   };
 
   const renderAbuseIPDBTab = (data) => (
-    <ul className="list-disc ml-6 space-y-1">
-      <li>Score: {data.data?.abuseConfidenceScore || 'N/A'}%</li>
-      <li>ISP: {data.data?.isp || 'N/A'}</li>
-      <li>Usage Type: {data.data?.usageType || 'N/A'}</li>
-      <li>Domain: {data.data?.domain || 'N/A'}</li>
-      <li>Total Reports: {data.data?.totalReports || 'N/A'}</li>
-    </ul>
+    <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-bg-tertiary p-4 rounded-lg">
+          <h4 className="text-accent-secondary font-semibold mb-2">Score Analysis</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between">
+              <span className="text-text-secondary">Confidence Score:</span>
+              <span className={`font-bold ${data.data?.abuseConfidenceScore > 50 ? 'text-status-error' : 'text-status-success'}`}>
+                {data.data?.abuseConfidenceScore || 'N/A'}%
+              </span>
+            </li>
+            <li className="flex justify-between">
+              <span className="text-text-secondary">Total Reports:</span>
+              <span className="text-text-primary">{data.data?.totalReports || 'N/A'}</span>
+            </li>
+            <li className="flex justify-between">
+              <span className="text-text-secondary">Last Reported:</span>
+              <span className="text-text-primary">{data.data?.lastReportedAt ? new Date(data.data.lastReportedAt).toLocaleString() : 'N/A'}</span>
+            </li>
+          </ul>
+        </div>
+        <div className="bg-bg-tertiary p-4 rounded-lg">
+          <h4 className="text-accent-secondary font-semibold mb-2">Infrastructure</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between">
+              <span className="text-text-secondary">ISP:</span>
+              <span className="text-text-primary">{data.data?.isp || 'N/A'}</span>
+            </li>
+            <li className="flex justify-between">
+              <span className="text-text-secondary">Usage Type:</span>
+              <span className="text-text-primary">{data.data?.usageType || 'N/A'}</span>
+            </li>
+            <li className="flex justify-between">
+              <span className="text-text-secondary">Domain:</span>
+              <span className="text-text-primary">{data.data?.domain || 'N/A'}</span>
+            </li>
+            <li className="flex justify-between">
+              <span className="text-text-secondary">Country:</span>
+              <span className="text-text-primary">{data.data?.countryCode || 'N/A'}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   );
 
   const renderOTXTab = (data) => {
@@ -378,9 +415,9 @@ export default function Tabs({ results, iocType, ioc }) {
               <h4 className="font-semibold mb-2">Related Pulses:</h4>
               <div className="space-y-2">
                 {data.pulse_info.pulses.slice(0, 5).map((pulse, index) => (
-                  <div key={index} className="bg-custom-light-gray dark:bg-custom-dark-gray border p-3">
+                  <div key={index} className="bg-custom-light-gray dark:bg-bg-secondary border p-3">
                     <div className="font-medium">
-                      <a href={`https://otx.alienvault.com/pulse/${pulse.id}`} target="_blank" rel="noopener noreferrer" className="text-custom-blue dark:text-custom-light-blue hover:underline">
+                      <a href={`https://otx.alienvault.com/pulse/${pulse.id}`} target="_blank" rel="noopener noreferrer" className="text-accent-primary dark:text-accent-secondary hover:underline">
                         {pulse.name}
                       </a>
                     </div>
@@ -427,8 +464,8 @@ export default function Tabs({ results, iocType, ioc }) {
             {data.nameservers && data.nameservers.length > 0 && (
               <li>Nameservers: {data.nameservers.join(', ')}</li>
             )}
-            {data.whois && <li>WHOIS: <a href={data.whois} target="_blank" rel="noopener noreferrer" className="text-custom-blue dark:text-custom-light-blue hover:underline">Available</a></li>}
-            {data.alexa && <li>Alexa Info: <a href={data.alexa} target="_blank" rel="noopener noreferrer" className="text-custom-blue dark:text-custom-light-blue hover:underline">Available</a></li>}
+            {data.whois && <li>WHOIS: <a href={data.whois} target="_blank" rel="noopener noreferrer" className="text-accent-primary dark:text-accent-secondary hover:underline">Available</a></li>}
+            {data.alexa && <li>Alexa Info: <a href={data.alexa} target="_blank" rel="noopener noreferrer" className="text-accent-primary dark:text-accent-secondary hover:underline">Available</a></li>}
             <li>Pulse Count: <span className={pulseCount > 0 ? 'text-red-600 font-semibold' : 'text-green-600'}>{pulseCount}</span></li>
           </ul>
           
@@ -439,7 +476,7 @@ export default function Tabs({ results, iocType, ioc }) {
                 {data.pulse_info.pulses.slice(0, 5).map((pulse, index) => (
                   <div key={index} className="bg-gray-50 border p-3">
                     <div className="font-medium">
-                      <a href={`https://otx.alienvault.com/pulse/${pulse.id}`} target="_blank" rel="noopener noreferrer" className="text-custom-blue dark:text-custom-light-blue hover:underline">
+                      <a href={`https://otx.alienvault.com/pulse/${pulse.id}`} target="_blank" rel="noopener noreferrer" className="text-accent-primary dark:text-accent-secondary hover:underline">
                         {pulse.name}
                       </a>
                     </div>
@@ -532,12 +569,75 @@ export default function Tabs({ results, iocType, ioc }) {
   };
 
   const renderShodanTab = (data) => (
-    <ul className="list-disc ml-6 space-y-1">
-      <li>ASN: {data.asn || 'N/A'}</li>
-      <li>ISP: {data.isp || 'N/A'}</li>
-      <li>Country: {data.country_name || 'N/A'}</li>
-      <li>Open Ports: {data.ports?.join(", ") || 'N/A'}</li>
-    </ul>
+    <div className="space-y-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="bg-bg-tertiary p-4 rounded-lg">
+          <h4 className="text-accent-secondary font-semibold mb-2">Network Info</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between">
+              <span className="text-text-secondary">ASN:</span>
+              <span className="text-text-primary">{data.asn || 'N/A'}</span>
+            </li>
+            <li className="flex justify-between">
+              <span className="text-text-secondary">ISP:</span>
+              <span className="text-text-primary">{data.isp || 'N/A'}</span>
+            </li>
+            <li className="flex justify-between">
+              <span className="text-text-secondary">Organization:</span>
+              <span className="text-text-primary">{data.org || 'N/A'}</span>
+            </li>
+             <li className="flex justify-between">
+              <span className="text-text-secondary">Last Update:</span>
+              <span className="text-text-primary">{data.last_update ? new Date(data.last_update).toLocaleDateString() : 'N/A'}</span>
+            </li>
+          </ul>
+        </div>
+        <div className="bg-bg-tertiary p-4 rounded-lg">
+          <h4 className="text-accent-secondary font-semibold mb-2">System Info</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between">
+              <span className="text-text-secondary">OS:</span>
+              <span className="text-text-primary">{data.os || 'N/A'}</span>
+            </li>
+            <li className="flex justify-between">
+              <span className="text-text-secondary">Open Ports:</span>
+              <span className="text-text-primary">{data.ports?.join(", ") || 'None'}</span>
+            </li>
+            <li className="flex justify-between">
+              <span className="text-text-secondary">Hostnames:</span>
+              <span className="text-text-primary truncate max-w-[200px]" title={data.hostnames?.join(", ")}>{data.hostnames?.length ? data.hostnames[0] : 'N/A'}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      {data.vulns && data.vulns.length > 0 && (
+        <div className="bg-bg-tertiary p-4 rounded-lg">
+          <h4 className="text-status-error font-semibold mb-2">Vulnerabilities ({data.vulns.length})</h4>
+          <div className="flex flex-wrap gap-2">
+            {data.vulns.slice(0, 10).map(vuln => (
+              <span key={vuln} className="px-2 py-1 bg-status-error/10 text-status-error text-xs rounded border border-status-error/20">
+                {vuln}
+              </span>
+            ))}
+            {data.vulns.length > 10 && <span className="text-xs text-text-muted self-center">+{data.vulns.length - 10} more</span>}
+          </div>
+        </div>
+      )}
+      
+      {data.tags && data.tags.length > 0 && (
+        <div className="bg-bg-tertiary p-4 rounded-lg">
+          <h4 className="text-accent-secondary font-semibold mb-2">Tags</h4>
+          <div className="flex flex-wrap gap-2">
+            {data.tags.map(tag => (
+              <span key={tag} className="px-2 py-1 bg-accent-primary/10 text-accent-primary text-xs rounded border border-accent-primary/20">
+                {tag}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
   );
 
   const renderVirusTotalTab = (data) => {
@@ -547,206 +647,151 @@ export default function Tabs({ results, iocType, ioc }) {
     const reputationText = reputation > 0 ? `${reputation} (Good)` : reputation < 0 ? `${reputation} (Bad)` : `${reputation} (Neutral)`;
     const crowdsourcedContext = attr.crowdsourced_context || [];
     
+    // Common Stats Component
+    const StatsDisplay = () => (
+      <div className="bg-bg-tertiary p-4 rounded-lg mb-4">
+        <h4 className="text-accent-secondary font-semibold mb-3">Detection Summary</h4>
+        <div className="grid grid-cols-2 sm:grid-cols-5 gap-2 text-center">
+          <div className="p-2 bg-status-success/10 rounded border border-status-success/20">
+            <div className="text-lg font-bold text-status-success">{stats.harmless || 0}</div>
+            <div className="text-xs text-text-secondary">Harmless</div>
+          </div>
+          <div className="p-2 bg-status-error/10 rounded border border-status-error/20">
+            <div className="text-lg font-bold text-status-error">{stats.malicious || 0}</div>
+            <div className="text-xs text-text-secondary">Malicious</div>
+          </div>
+          <div className="p-2 bg-status-warning/10 rounded border border-status-warning/20">
+            <div className="text-lg font-bold text-status-warning">{stats.suspicious || 0}</div>
+            <div className="text-xs text-text-secondary">Suspicious</div>
+          </div>
+          <div className="p-2 bg-bg-secondary rounded border border-bg-primary">
+            <div className="text-lg font-bold text-text-muted">{stats.undetected || 0}</div>
+            <div className="text-xs text-text-secondary">Undetected</div>
+          </div>
+           <div className="p-2 bg-bg-secondary rounded border border-bg-primary">
+            <div className="text-lg font-bold text-text-muted">{stats.timeout || 0}</div>
+            <div className="text-xs text-text-secondary">Timeout</div>
+          </div>
+        </div>
+      </div>
+    );
+
     if (iocType === "hash") {
-      const malicious = stats.malicious || 0;
-      const total = Object.values(stats).reduce((sum, count) => sum + (count || 0), 0);
       const lastAnalysisDate = attr.last_analysis_date ? new Date(attr.last_analysis_date * 1000).toLocaleString() : 'N/A';
+      const firstSubmissionDate = attr.first_submission_date ? new Date(attr.first_submission_date * 1000).toLocaleString() : 'N/A';
       
       return (
-        <div className="space-y-3">
-          <ul className="list-disc ml-6 space-y-1">
-            <li>Reputation: <span className={reputation > 0 ? 'text-green-600' : reputation < 0 ? 'text-red-600' : 'text-gray-600'}>{reputationText}</span></li>
-            <li>Detection Results:</li>
-            <ul className="list-disc ml-6 space-y-1">
-              <li className="text-green-600">Harmless: {stats.harmless || 0}</li>
-              <li className="text-red-600">Malicious: {stats.malicious || 0}</li>
-              <li className="text-yellow-600">Suspicious: {stats.suspicious || 0}</li>
-              <li className="text-gray-600">Undetected: {stats.undetected || 0}</li>
-              <li className="text-gray-500">Timeout: {stats.timeout || 0}</li>
-            </ul>
-            <li>Score: <span className="font-semibold">{malicious}/{total}</span></li>
-            <li>File Name: {(() => {
-              // Check if meaningful_name is actually meaningful
-              if (attr.meaningful_name && 
-                  !attr.meaningful_name.includes('phpa9a9cak2oaiv4f40YPq') &&
-                  !attr.meaningful_name.match(/^[a-zA-Z0-9]{15,}$/) &&
-                  attr.meaningful_name.length > 3) {
-                return attr.meaningful_name;
-              }
-              
-              if (attr.names && attr.names.length > 0) {
-                // Find the most meaningful filename
-                const meaningfulNames = attr.names.filter(name => 
-                  !name.match(/^[a-f0-9]{32,}/) && // Not just a hash
-                  !name.match(/\.(com|exe|bin|txt)-\d+$/) && // Not filename with random number suffix
-                  !name.includes('phpa9a9cak2oaiv4f40YPq') && // Not temp/random names
-                  name.length > 3 && // Not too short
-                  name.length < 50 && // Not too long
-                  !name.match(/^[a-zA-Z0-9]{15,}$/) // Not random alphanumeric strings
-                );
-                
-                if (meaningfulNames.length > 0) {
-                  // Prefer simple, recognizable names without random suffixes
-                  const simpleNames = meaningfulNames.filter(name => 
-                    (name === 'eicar.com' || name === 'eicar.txt' || name === 'eicar.exe' ||
-                     name === 'eicar.csv' || name === 'eicar.com.txt' ||
-                     (name.toLowerCase().includes('eicar') && !name.match(/-\d+$/)) ||
-                     (name.toLowerCase().includes('test') && !name.match(/-\d+$/)))
-                  );
-                  
-                  if (simpleNames.length > 0) {
-                    // Prefer the simplest name
-                    const preferred = simpleNames.find(name => name === 'eicar.com') ||
-                                    simpleNames.find(name => name === 'eicar.txt') ||
-                                    simpleNames.find(name => name === 'eicar.exe') ||
-                                    simpleNames[0];
-                    return preferred;
-                  }
-                  
-                  // If no simple names, return the first meaningful name
-                  return meaningfulNames[0];
-                }
-                
-                // Fallback to first name if no meaningful names found
-                return attr.names[0];
-              }
-              return 'N/A';
-            })()}</li>
-            <li>Size: {attr.size ? `${(attr.size / 1024).toFixed(2)} KB` : 'N/A'}</li>
-            <li>Last Analysis Date: {lastAnalysisDate}</li>
-            {attr.categories && attr.categories.length > 0 && (
-              <li>Categories: {attr.categories.join(", ")}</li>
-            )}
-          </ul>
+        <div className="space-y-4">
+          <StatsDisplay />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-bg-tertiary p-4 rounded-lg">
+              <h4 className="text-accent-secondary font-semibold mb-2">File Details</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex justify-between"><span className="text-text-secondary">Type:</span> <span className="text-text-primary">{attr.type_description || 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Size:</span> <span className="text-text-primary">{attr.size ? `${(attr.size / 1024).toFixed(2)} KB` : 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Magic:</span> <span className="text-text-primary truncate max-w-[150px]" title={attr.magic}>{attr.magic || 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Reputation:</span> <span className={reputation < 0 ? 'text-status-error' : 'text-status-success'}>{reputationText}</span></li>
+              </ul>
+            </div>
+            <div className="bg-bg-tertiary p-4 rounded-lg">
+              <h4 className="text-accent-secondary font-semibold mb-2">History</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex justify-between"><span className="text-text-secondary">First Seen:</span> <span className="text-text-primary">{firstSubmissionDate}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Last Analysis:</span> <span className="text-text-primary">{lastAnalysisDate}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Times Submitted:</span> <span className="text-text-primary">{attr.times_submitted || 'N/A'}</span></li>
+              </ul>
+            </div>
+          </div>
+
+          {attr.names && attr.names.length > 0 && (
+            <div className="bg-bg-tertiary p-4 rounded-lg">
+              <h4 className="text-accent-secondary font-semibold mb-2">Known Filenames</h4>
+              <div className="flex flex-wrap gap-2">
+                {attr.names.slice(0, 5).map((name, i) => (
+                  <span key={i} className="px-2 py-1 bg-bg-secondary text-text-secondary text-xs rounded border border-bg-primary font-mono">{name}</span>
+                ))}
+                {attr.names.length > 5 && <span className="text-xs text-text-muted self-center">+{attr.names.length - 5} more</span>}
+              </div>
+            </div>
+          )}
         </div>
       );
     } else if (iocType === "url") {
-      // URL-specific VirusTotal display
-      const score = `${stats.malicious || 0}/${(stats.malicious || 0) + (stats.harmless || 0) + (stats.suspicious || 0) + (stats.undetected || 0) + (stats.timeout || 0)}`;
-      const creationDate = attr.creation_date ? new Date(attr.creation_date * 1000).toLocaleDateString() : 'N/A';
-      const lastAnalysisDate = attr.last_analysis_date ? new Date(attr.last_analysis_date * 1000).toLocaleDateString() : 'N/A';
-      
-      return (
-        <div className="space-y-3">
-          <ul className="list-disc ml-6 space-y-1">
-            <li>Reputation: <span className={reputation > 0 ? 'text-green-600' : reputation < 0 ? 'text-red-600' : 'text-gray-600'}>{reputationText}</span></li>
-            <li>Detection Results:</li>
-            <ul className="list-disc ml-6 space-y-1">
-              <li className="text-green-600">Harmless: {stats.harmless || 0}</li>
-              <li className="text-red-600">Malicious: {stats.malicious || 0}</li>
-              <li className="text-yellow-600">Suspicious: {stats.suspicious || 0}</li>
-              <li className="text-gray-600">Undetected: {stats.undetected || 0}</li>
-            </ul>
-            <li>Score: <span className={stats.malicious > 0 ? 'text-red-600 font-semibold' : 'text-green-600'}>{score}</span></li>
-            <li>Creation Date: {creationDate}</li>
-            <li>Last Analysis Date: {lastAnalysisDate}</li>
-            {attr.registrar && <li>Domain registrar url: {attr.registrar}</li>}
-            <li>Domain name: {data.data?.id || ioc}</li>
-            {attr.last_dns_records && attr.last_dns_records.length > 0 && (
-              <li>IP Address: {attr.last_dns_records[0].value || 'N/A'}</li>
-            )}
-            {attr.country && <li>Administrative country: {attr.country}</li>}
-            {attr.categories && attr.categories.length > 0 && (
-              <li>Categories: {attr.categories.join(", ")}</li>
-            )}
-          </ul>
+       const creationDate = attr.creation_date ? new Date(attr.creation_date * 1000).toLocaleDateString() : 'N/A';
+       const lastAnalysisDate = attr.last_analysis_date ? new Date(attr.last_analysis_date * 1000).toLocaleDateString() : 'N/A';
+
+       return (
+        <div className="space-y-4">
+          <StatsDisplay />
           
-          {crowdsourcedContext.length > 0 && (
-            <div className="mt-4">
-              <h4 className="font-semibold text-red-600 mb-2">⚠️ Threat Intelligence Alerts:</h4>
-              <div className="space-y-2">
-                {crowdsourcedContext.slice(0, 3).map((context, index) => (
-                  <div key={index} className="bg-red-50 border border-red-200 p-3">
-                    <div className="font-medium text-red-800">{context.title}</div>
-                    <div className="text-red-700 text-sm">{context.details}</div>
-                    <div className="text-red-600 text-xs mt-1">
-                      Severity: {context.severity} | Source: {context.source}
-                    </div>
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-bg-tertiary p-4 rounded-lg">
+              <h4 className="text-accent-secondary font-semibold mb-2">Page Info</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex justify-between"><span className="text-text-secondary">Title:</span> <span className="text-text-primary truncate max-w-[200px]" title={attr.title}>{attr.title || 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Response Code:</span> <span className="text-text-primary">{attr.last_http_response_code || 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Threat Names:</span> <span className="text-status-error">{attr.threat_names?.join(", ") || 'None'}</span></li>
+              </ul>
+            </div>
+             <div className="bg-bg-tertiary p-4 rounded-lg">
+              <h4 className="text-accent-secondary font-semibold mb-2">Context</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex justify-between"><span className="text-text-secondary">Creation Date:</span> <span className="text-text-primary">{creationDate}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Last Analysis:</span> <span className="text-text-primary">{lastAnalysisDate}</span></li>
+                 <li className="flex justify-between"><span className="text-text-secondary">Reputation:</span> <span className={reputation < 0 ? 'text-status-error' : 'text-status-success'}>{reputationText}</span></li>
+              </ul>
+            </div>
+          </div>
+          
+          {attr.categories && Object.keys(attr.categories).length > 0 && (
+             <div className="bg-bg-tertiary p-4 rounded-lg">
+              <h4 className="text-accent-secondary font-semibold mb-2">Categories</h4>
+              <div className="flex flex-wrap gap-2">
+                {Object.values(attr.categories).slice(0, 8).map((cat, i) => (
+                  <span key={i} className="px-2 py-1 bg-accent-primary/10 text-accent-primary text-xs rounded border border-accent-primary/20">{cat}</span>
                 ))}
               </div>
             </div>
           )}
         </div>
-      );
-    } else if (iocType === "domain") {
-      // Domain-specific VirusTotal display
-      const score = `${stats.malicious || 0}/${(stats.malicious || 0) + (stats.harmless || 0) + (stats.suspicious || 0) + (stats.undetected || 0) + (stats.timeout || 0)}`;
-      const creationDate = attr.creation_date ? new Date(attr.creation_date * 1000).toLocaleDateString() : 'N/A';
-      const lastAnalysisDate = attr.last_analysis_date ? new Date(attr.last_analysis_date * 1000).toLocaleDateString() : 'N/A';
-      
-      return (
-        <div className="space-y-3">
-          <ul className="list-disc ml-6 space-y-1">
-            <li>Reputation: <span className={reputation > 0 ? 'text-green-600' : reputation < 0 ? 'text-red-600' : 'text-gray-600'}>{reputationText}</span></li>
-            <li>Detection Results:</li>
-            <ul className="list-disc ml-6 space-y-1">
-              <li className="text-green-600">Harmless: {stats.harmless || 0}</li>
-              <li className="text-red-600">Malicious: {stats.malicious || 0}</li>
-              <li className="text-yellow-600">Suspicious: {stats.suspicious || 0}</li>
-              <li className="text-gray-600">Undetected: {stats.undetected || 0}</li>
-              <li className="text-gray-500">Timeout: {stats.timeout || 0}</li>
-            </ul>
-            <li>Score: <span className={stats.malicious > 0 ? 'text-red-600 font-semibold' : 'text-green-600'}>{score}</span></li>
-            <li>Creation Date: {creationDate}</li>
-            <li>Last Analysis Date: {lastAnalysisDate}</li>
-            {attr.registrar && <li>Domain registrar url: {attr.registrar}</li>}
-            <li>Domain name: {data.data?.id || ioc}</li>
-            {attr.last_dns_records && attr.last_dns_records.length > 0 && (
-              <li>IP Address: {attr.last_dns_records[0].value || 'N/A'}</li>
-            )}
-            {attr.country && <li>Administrative country: {attr.country}</li>}
-            {attr.categories && attr.categories.length > 0 && (
-              <li>Categories: {attr.categories.join(", ")}</li>
-            )}
-          </ul>
-          
-          {crowdsourcedContext.length > 0 && (
-            <div className="mt-4">
-              <h4 className="font-semibold text-red-600 mb-2">⚠️ Threat Intelligence Alerts:</h4>
-              <div className="space-y-2">
-                {crowdsourcedContext.slice(0, 3).map((context, index) => (
-                  <div key={index} className="bg-red-50 border border-red-200 p-3">
-                    <div className="font-medium text-red-800">{context.title}</div>
-                    <div className="text-red-700 text-sm">{context.details}</div>
-                    <div className="text-red-600 text-xs mt-1">
-                      Severity: {context.severity} | Source: {context.source}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      );
+       );
     } else {
       // IP-specific VirusTotal display
       return (
-        <div className="space-y-3">
-          <ul className="list-disc ml-6 space-y-1">
-             <li>Reputation Score: <span className={reputation > 0 ? 'text-green-600' : reputation < 0 ? 'text-red-600' : 'text-gray-600'}>{reputationText}</span></li>
-             <li>Detection Results: <span className="font-semibold">{stats.malicious || 0}/{(stats.malicious || 0) + (stats.harmless || 0) + (stats.suspicious || 0) + (stats.undetected || 0) + (stats.timeout || 0)}</span> engines flagged as malicious</li>
-             <li>Detailed Analysis:</li>
-             <ul className="list-disc ml-6 space-y-1">
-               <li className="text-green-600">Harmless: {stats.harmless || 0}</li>
-               <li className="text-red-600">Malicious: {stats.malicious || 0}</li>
-               <li className="text-yellow-600">Suspicious: {stats.suspicious || 0}</li>
-               <li className="text-gray-600">Undetected: {stats.undetected || 0}</li>
-               <li className="text-gray-500">Timeout: {stats.timeout || 0}</li>
-             </ul>
-             {attr.as_owner && <li>AS Owner: {attr.as_owner}</li>}
-             {attr.country && <li>Country: {attr.country}</li>}
-           </ul>
-          
-          {crowdsourcedContext.length > 0 && (
-            <div className="mt-4">
-              <h4 className="font-semibold text-red-600 mb-2">⚠️ Threat Intelligence Alerts:</h4>
+        <div className="space-y-4">
+           <StatsDisplay />
+           
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+             <div className="bg-bg-tertiary p-4 rounded-lg">
+               <h4 className="text-accent-secondary font-semibold mb-2">General Info</h4>
+               <ul className="space-y-2 text-sm">
+                 {attr.country && <li className="flex justify-between"><span className="text-text-secondary">Country:</span> <span className="text-text-primary">{attr.country}</span></li>}
+                 {attr.as_owner && <li className="flex justify-between"><span className="text-text-secondary">AS Owner:</span> <span className="text-text-primary truncate max-w-[200px]" title={attr.as_owner}>{attr.as_owner}</span></li>}
+                 {attr.registrar && <li className="flex justify-between"><span className="text-text-secondary">Registrar:</span> <span className="text-text-primary">{attr.registrar}</span></li>}
+                 <li className="flex justify-between"><span className="text-text-secondary">Reputation:</span> <span className={reputation < 0 ? 'text-status-error' : 'text-status-success'}>{reputationText}</span></li>
+               </ul>
+             </div>
+             
+             {attr.jarm && (
+                <div className="bg-bg-tertiary p-4 rounded-lg">
+                  <h4 className="text-accent-secondary font-semibold mb-2">JARM Fingerprint</h4>
+                  <div className="text-xs font-mono break-all text-text-muted bg-bg-secondary p-2 rounded border border-bg-primary">
+                    {attr.jarm}
+                  </div>
+                </div>
+             )}
+           </div>
+           
+           {crowdsourcedContext.length > 0 && (
+            <div className="bg-bg-tertiary p-4 rounded-lg border border-status-error/20">
+              <h4 className="font-semibold text-status-error mb-2">⚠️ Threat Intelligence Alerts</h4>
               <div className="space-y-2">
                 {crowdsourcedContext.slice(0, 3).map((context, index) => (
-                  <div key={index} className="bg-red-50 border border-red-200 p-3">
-                    <div className="font-medium text-red-800">{context.title}</div>
-                    <div className="text-red-700 text-sm">{context.details}</div>
-                    <div className="text-red-600 text-xs mt-1">
+                  <div key={index} className="bg-bg-secondary border border-status-error/10 p-3 rounded">
+                    <div className="font-medium text-status-error text-sm">{context.title}</div>
+                    <div className="text-text-secondary text-xs mt-1">{context.details}</div>
+                    <div className="text-text-muted text-[10px] mt-1 uppercase tracking-wider">
                       Severity: {context.severity} | Source: {context.source}
                     </div>
                   </div>
@@ -762,30 +807,72 @@ export default function Tabs({ results, iocType, ioc }) {
   const renderWhoisTab = (data) => {
     if (iocType === "domain" || iocType === "url") {
       return (
-        <ul className="list-disc ml-6 space-y-1">
-          <li>Registrar: {data.registrar || 'N/A'}</li>
-          <li>Creation Date: {data.creation_date || 'N/A'}</li>
-          <li>Expiry Date: {data.expiration_date || 'N/A'}</li>
-          <li>Org: {data.org || 'N/A'}</li>
-          <li>Country: {data.country || 'N/A'}</li>
-        </ul>
+        <div className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="bg-bg-tertiary p-4 rounded-lg">
+              <h4 className="text-accent-secondary font-semibold mb-2">Registration Info</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex justify-between"><span className="text-text-secondary">Registrar:</span> <span className="text-text-primary">{data.registrar || 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Created:</span> <span className="text-text-primary">{data.creation_date ? new Date(data.creation_date).toLocaleDateString() : 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Expires:</span> <span className="text-text-primary">{data.expiration_date ? new Date(data.expiration_date).toLocaleDateString() : 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Org:</span> <span className="text-text-primary">{data.org || 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Country:</span> <span className="text-text-primary">{data.country || 'N/A'}</span></li>
+              </ul>
+            </div>
+            
+            <div className="bg-bg-tertiary p-4 rounded-lg">
+              <h4 className="text-accent-secondary font-semibold mb-2">Technical Info</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex flex-col gap-1">
+                  <span className="text-text-secondary">Name Servers:</span> 
+                  <span className="text-text-primary text-xs font-mono">
+                    {Array.isArray(data.name_servers) ? data.name_servers.join(', ') : (data.name_servers || 'N/A')}
+                  </span>
+                </li>
+                <li className="flex flex-col gap-1 mt-2">
+                  <span className="text-text-secondary">Status:</span> 
+                  <span className="text-text-primary text-xs">
+                     {Array.isArray(data.status) ? data.status.slice(0, 3).join(', ') + (data.status.length > 3 ? '...' : '') : (data.status || 'N/A')}
+                  </span>
+                </li>
+                <li className="flex justify-between mt-2"><span className="text-text-secondary">DNSSEC:</span> <span className="text-text-primary">{Array.isArray(data.dnssec) ? data.dnssec.join(', ') : (data.dnssec || 'N/A')}</span></li>
+              </ul>
+            </div>
+          </div>
+          
+          {data.emails && (
+            <div className="bg-bg-tertiary p-4 rounded-lg">
+              <h4 className="text-accent-secondary font-semibold mb-2">Contact Emails</h4>
+              <div className="flex flex-wrap gap-2">
+                {Array.isArray(data.emails) ? data.emails.map(email => (
+                  <a key={email} href={`mailto:${email}`} className="text-accent-primary hover:underline text-sm">{email}</a>
+                )) : <span className="text-text-primary text-sm">{data.emails}</span>}
+              </div>
+            </div>
+          )}
+        </div>
       );
     } else {
       // IP-specific WHOIS display
       return (
-        <ul className="list-disc ml-6 space-y-1">
-          <li>ASN: {data.asn || 'N/A'}</li>
-          <li>ASN Description: {data.asn_description || 'N/A'}</li>
-          <li>Country: {data.asn_country_code || 'N/A'}</li>
-          <li>CIDR: {data.asn_cidr || 'N/A'}</li>
-          {data.nets && data.nets[0] && (
-            <>
-              <li>Network Name: {data.nets[0].name || 'N/A'}</li>
-              <li>Description: {data.nets[0].description || 'N/A'}</li>
-              <li>Address: {data.nets[0].address || 'N/A'}</li>
-            </>
-          )}
-        </ul>
+        <div className="bg-bg-tertiary p-4 rounded-lg">
+          <h4 className="text-accent-secondary font-semibold mb-2">Network Whois</h4>
+          <ul className="space-y-2 text-sm">
+            <li className="flex justify-between"><span className="text-text-secondary">ASN:</span> <span className="text-text-primary">{data.asn || 'N/A'}</span></li>
+            <li className="flex justify-between"><span className="text-text-secondary">Description:</span> <span className="text-text-primary">{data.asn_description || 'N/A'}</span></li>
+            <li className="flex justify-between"><span className="text-text-secondary">Country:</span> <span className="text-text-primary">{data.asn_country_code || 'N/A'}</span></li>
+            <li className="flex justify-between"><span className="text-text-secondary">CIDR:</span> <span className="text-text-primary">{data.asn_cidr || 'N/A'}</span></li>
+            {data.nets && data.nets[0] && (
+              <>
+                <li className="border-t border-bg-primary my-2 pt-2"></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Net Name:</span> <span className="text-text-primary">{data.nets[0].name || 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Net Handle:</span> <span className="text-text-primary">{data.nets[0].handle || 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Range:</span> <span className="text-text-primary">{data.nets[0].range || 'N/A'}</span></li>
+                <li className="flex justify-between"><span className="text-text-secondary">Address:</span> <span className="text-text-primary">{data.nets[0].address || 'N/A'}</span></li>
+              </>
+            )}
+          </ul>
+        </div>
       );
     }
   };
@@ -801,7 +888,7 @@ export default function Tabs({ results, iocType, ioc }) {
         <div className="flex flex-wrap gap-2">
           <button 
             onClick={() => setActiveTab('overview')} 
-            className="px-3 py-1 text-sm bg-custom-light-blue dark:bg-custom-blue text-custom-blue dark:text-custom-light-blue hover:bg-custom-blue dark:hover:bg-custom-light-blue hover:text-custom-cream dark:hover:text-custom-dark-gray transition-colors"
+            className="px-3 py-1 text-sm bg-custom-light-blue dark:bg-custom-blue text-accent-primary dark:text-accent-secondary hover:bg-custom-blue dark:hover:bg-custom-light-blue hover:text-custom-cream dark:hover:text-gray-900 transition-colors"
           >
             Overview
           </button>
@@ -809,7 +896,7 @@ export default function Tabs({ results, iocType, ioc }) {
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className="px-3 py-1 text-sm bg-custom-light-bg dark:bg-custom-dark-gray text-custom-blue dark:text-custom-light-blue hover:bg-custom-light-blue dark:hover:bg-custom-blue hover:text-custom-dark-blue dark:hover:text-custom-cream transition-colors"
+              className="px-3 py-1 text-sm bg-white dark:bg-bg-secondary text-accent-primary dark:text-accent-secondary hover:bg-custom-light-blue dark:hover:bg-custom-blue hover:text-custom-dark-blue dark:hover:text-custom-cream transition-colors"
             >
               {tab.toUpperCase()}
             </button>
@@ -824,14 +911,14 @@ export default function Tabs({ results, iocType, ioc }) {
   return (
     <div>
       {/* Tab buttons */}
-      <div className="border-b-4 border-retro-dark-border mb-4">
+      <div className="border-b-4 border-gray-200 dark:border-bg-tertiary mb-4">
         <nav className="flex gap-4">
           {availableTabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`pb-2 px-3 py-1 border-3 border-retro-dark-border shadow-retro text-custom-blue dark:text-custom-light-blue hover:text-custom-dark-blue dark:hover:text-custom-cream transition-colors ${
-                activeTab === tab ? "bg-retro-terminal-amber text-black" : "bg-custom-light-bg dark:bg-custom-dark-gray"
+              className={`pb-2 px-3 py-1 border border-gray-200 dark:border-bg-tertiary shadow-sm text-accent-primary dark:text-accent-secondary hover:text-custom-dark-blue dark:hover:text-custom-cream transition-colors ${
+                activeTab === tab ? "bg-accent-primary text-white text-black" : "bg-white dark:bg-bg-secondary"
               }`}
             >
               {tab.toUpperCase()}
@@ -841,7 +928,7 @@ export default function Tabs({ results, iocType, ioc }) {
       </div>
 
       {/* Tab content */}
-      <div className="p-4 border-4 border-retro-dark-border shadow-retro bg-custom-light-bg dark:bg-custom-dark-gray">
+      <div className="p-4 border border-gray-200 dark:border-bg-tertiary shadow-sm bg-white dark:bg-bg-secondary">
         {activeTab === "overview"
           ? renderOverview()
           : renderToolTab(activeTab, results[activeTab])}

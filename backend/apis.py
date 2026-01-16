@@ -170,6 +170,11 @@ def fetch_whois_domain(domain: str):
             "expiration_date": str(w.expiration_date),
             "org": w.org,
             "country": w.country,
+            "emails": w.emails,
+            "name_servers": w.name_servers,
+            "status": w.status,
+            "dnssec": w.dnssec,
+            "registrar_url": w.registrar_url,
         }
     except Exception as e:
         return {"error": str(e)}

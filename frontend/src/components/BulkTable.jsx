@@ -4,54 +4,54 @@ export default function BulkTable({ rows, onRowClick, expandedRow }) {
   const tools = ["abuseipdb", "virustotal", "shodan", "otx", "whois"];
 
   return (
-    <div className="overflow-x-auto border-4 border-retro-dark-border shadow-retro">
-      <table className="min-w-full border-collapse border-3 border-retro-dark-border bg-white dark:bg-gray-800">
+    <div className="overflow-x-auto rounded-xl border border-bg-tertiary shadow-lg">
+      <table className="min-w-full border-collapse bg-bg-secondary">
         <thead>
-          <tr className="bg-retro-terminal-amber">
-            <th className="border-2 border-retro-dark-border px-3 py-2 text-left text-black font-bold">IOC</th>
+          <tr className="bg-bg-tertiary border-b border-bg-primary">
+            <th className="px-6 py-4 text-left text-xs font-semibold text-text-secondary uppercase tracking-wider">IOC</th>
             {tools.map((tool) => (
               <th
                 key={tool}
-                className="border-2 border-retro-dark-border px-3 py-2 text-left text-black font-bold"
+                className="px-6 py-4 text-left text-xs font-semibold text-text-secondary uppercase tracking-wider"
               >
                 {tool.toUpperCase()}
               </th>
             ))}
           </tr>
         </thead>
-        <tbody>
+        <tbody className="divide-y divide-bg-tertiary">
           {rows.map((row) => (
             <tr
               key={row.ioc}
               onClick={() => onRowClick(row.ioc)}
-              className={`cursor-pointer border-2 border-retro-dark-border hover:bg-custom-light-bg dark:hover:bg-custom-dark-gray hover:shadow-retro-inset ${
-                 expandedRow === row.ioc ? "bg-custom-light-bg dark:bg-custom-dark-gray shadow-retro-inset" : ""
+              className={`cursor-pointer transition-colors hover:bg-bg-tertiary/50 ${
+                 expandedRow === row.ioc ? "bg-bg-tertiary/80" : ""
                }`}
             >
-              <td className="border-2 border-retro-dark-border px-3 py-2 font-medium text-custom-dark-gray dark:text-custom-cream">
+              <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-text-primary">
                 {row.ioc}
               </td>
               {tools.map((tool) => {
                 const cell = row.cells[tool];
                 if (!cell) return (
-                  <td key={tool} className="border-2 border-retro-dark-border px-3 py-2 text-custom-blue dark:text-custom-light-blue">
+                  <td key={tool} className="px-6 py-4 whitespace-nowrap text-sm text-text-muted">
                     N/A
                   </td>
                 );
                 return (
-                  <td key={tool} className="border-2 border-retro-dark-border px-3 py-2">
+                  <td key={tool} className="px-6 py-4 whitespace-nowrap text-sm">
                     <div className="flex flex-col">
-                      <span className="font-semibold text-custom-dark-gray dark:text-custom-cream">{cell.score_display}</span>
-                      {cell.summary && <span className="text-sm text-custom-blue dark:text-custom-light-blue">{cell.summary}</span>}
+                      <span className="font-medium text-text-primary">{cell.score_display}</span>
+                      {cell.summary && <span className="text-xs text-text-secondary mt-0.5">{cell.summary}</span>}
                       {cell.link && (
                         <a
                           href={cell.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-custom-blue dark:text-custom-light-blue underline text-sm"
+                          className="text-accent-secondary hover:text-accent-primary hover:underline text-xs mt-1 inline-flex items-center gap-1"
                           onClick={(e) => e.stopPropagation()}
                         >
-                          Open
+                          Open ↗
                         </a>
                       )}
                     </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Tabs from "./Tabs.jsx";
+import ProgressBar from "./ProgressBar";
 import { apiUrl } from "../config";
 
 export default function SingleIOCView() {
@@ -58,30 +59,32 @@ export default function SingleIOCView() {
   };
 
   return (
-    <div className="card bg-custom-light-bg dark:bg-custom-dark-gray border-4 border-retro-dark-border shadow-retro p-6">
+    <div className="space-y-6">
       {/* Input Section */}
-      <div className="flex gap-2 mb-6">
+      <div className="flex gap-4">
         <input
           type="text"
           placeholder="Enter IP, URL, domain, or hash "
           value={ioc}
           onChange={(e) => setIoc(e.target.value)}
           onKeyPress={handleKeyPress}
-          className="border-3 border-retro-dark-border shadow-retro-inset p-2 flex-1 bg-custom-light-bg dark:bg-custom-dark-gray text-custom-dark-gray dark:text-custom-cream placeholder-custom-gray dark:placeholder-custom-light-gray focus:ring-2 focus:ring-retro-terminal-green focus:border-retro-terminal-green"
+          className="flex-1 p-3 rounded-lg bg-bg-tertiary text-text-primary placeholder-text-muted border border-transparent focus:border-accent-primary focus:ring-1 focus:ring-accent-primary outline-none transition-all"
         />
         <button
           onClick={analyzeIOC}
-          className="bg-custom-gray hover:bg-custom-light-gray text-custom-cream px-4 py-2 border-3 border-retro-dark-border shadow-retro transition-colors"
+          className="px-6 py-3 rounded-lg bg-accent-primary hover:bg-accent-hover text-white font-medium transition-colors shadow-lg shadow-accent-primary/20"
         >
           Analyze
         </button>
       </div>
 
-      {loading && <p className="text-custom-gray dark:text-custom-light-gray">Loading...</p>}
+      <ProgressBar isLoading={loading} duration={2000} />
 
       {/* Results */}
       {result && (
-        <Tabs results={result.results} iocType={iocType} ioc={ioc} />
+        <div className="animate-fadeIn">
+          <Tabs results={result.results} iocType={iocType} ioc={ioc} />
+        </div>
       )}
     </div>
   );

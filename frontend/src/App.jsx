@@ -8,21 +8,21 @@ function AppContent() {
   const { isDarkMode, toggleTheme } = useTheme();
 
   return (
-    <div className={`min-h-screen transition-colors duration-200 border-4 border-retro-dark-border ${
-      isDarkMode ? 'bg-custom-dark-gray text-custom-cream' : 'bg-custom-light-bg text-custom-dark-gray'
+    <div className={`min-h-screen transition-colors duration-200 ${
+      isDarkMode ? 'bg-bg-primary text-text-primary' : 'bg-gray-100 text-gray-900'
     }`}>
-      <div className="max-w-auto mx-auto p-6 border-2 border-retro-dark-border m-2 shadow-retro">
+      <div className="max-w-7xl mx-auto p-6">
         {/* Header with title and dark mode toggle */}
-        <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-between items-center mb-8 border-b border-bg-tertiary pb-4">
           <div className="flex-1"></div>
-          <h1 className="text-3xl font-bold text-center flex-1 border-3 border-retro-dark-border p-2 shadow-retro bg-retro-terminal-amber text-black">IOC Analyzer</h1>
+          <h1 className="text-4xl font-bold text-center flex-1 text-accent-primary tracking-tight">IOC Analyzer</h1>
           <div className="flex-1 flex justify-end">
             <button
               onClick={toggleTheme}
-              className={`p-2 border-2 border-retro-dark-border shadow-retro transition-colors ${
+              className={`p-2 rounded-full transition-colors ${
                 isDarkMode 
-                  ? 'bg-custom-gray hover:bg-custom-light-gray text-custom-cream' 
-                  : 'bg-custom-light-gray hover:bg-custom-gray text-custom-dark-gray'
+                  ? 'bg-bg-secondary hover:bg-bg-tertiary text-text-primary' 
+                  : 'bg-white hover:bg-gray-200 text-gray-800'
               }`}
               title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
             >
@@ -40,26 +40,26 @@ function AppContent() {
         </div>
 
         {/* Mode Switch */}
-        <div className="grid grid-cols-2 gap-4 mb-6">
+        <div className="flex justify-center gap-4 mb-8">
           <button
-            className={`px-4 py-2 border-3 border-retro-dark-border shadow-retro transition-colors ${
+            className={`px-6 py-2 rounded-lg font-medium transition-all duration-200 ${
               mode === "single" 
-                ? "bg-custom-gray text-custom-cream" 
+                ? "bg-accent-primary text-white shadow-lg shadow-accent-primary/20" 
                 : isDarkMode 
-                  ? "bg-custom-light-gray text-custom-cream hover:bg-custom-gray" 
-                  : "bg-custom-light-gray text-custom-dark-gray hover:bg-custom-gray hover:text-custom-cream"
+                  ? "bg-bg-secondary text-text-secondary hover:bg-bg-tertiary hover:text-text-primary" 
+                  : "bg-white text-gray-600 hover:bg-gray-100"
             }`}
             onClick={() => setMode("single")}
           >
             Single IOC
           </button>
           <button
-            className={`px-4 py-2 border-3 border-retro-dark-border shadow-retro transition-colors ${
+            className={`px-6 py-2 rounded-lg font-medium transition-all duration-200 ${
               mode === "bulk" 
-                ? "bg-custom-gray text-custom-cream" 
+                ? "bg-accent-primary text-white shadow-lg shadow-accent-primary/20" 
                 : isDarkMode 
-                  ? "bg-custom-light-gray text-custom-cream hover:bg-custom-gray" 
-                  : "bg-custom-light-gray text-custom-dark-gray hover:bg-custom-gray hover:text-custom-cream"
+                  ? "bg-bg-secondary text-text-secondary hover:bg-bg-tertiary hover:text-text-primary" 
+                  : "bg-white text-gray-600 hover:bg-gray-100"
             }`}
             onClick={() => setMode("bulk")}
           >
@@ -68,7 +68,9 @@ function AppContent() {
         </div>
 
         {/* Render based on mode */}
-        {mode === "single" ? <SingleIOCView /> : <BulkIOCView />}
+        <div className={`rounded-xl p-6 ${isDarkMode ? 'bg-bg-secondary border border-bg-tertiary' : 'bg-white shadow-sm'}`}>
+          {mode === "single" ? <SingleIOCView /> : <BulkIOCView />}
+        </div>
       </div>
     </div>
   );

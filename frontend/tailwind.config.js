@@ -8,31 +8,34 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'sans': ['Anonymous Pro', 'monospace']
+        'sans': ['Inter', 'sans-serif'],
+        'mono': ['Anonymous Pro', 'monospace']
       },
       colors: {
-        'custom': {
-          'dark-gray': '#222831',
-          'gray': '#393E46',
-          'light-gray': '#948979',
-          'cream': '#DFD0B8',
-          'light-bg': '#FBF8EF'
+        // Minimalistic Black & Blue Theme
+        bg: {
+          primary: '#050505',   // Very dark black
+          secondary: '#111111', // Slightly lighter for cards
+          tertiary: '#1a1a1a'   // Borders/Separators
         },
-        'retro': {
-          'dark-border': '#000000',
-          'terminal-green': '#00FF00',
-          'terminal-amber': '#FFBF00',
-          'crt-bg': '#0a0a0a'
+        accent: {
+          primary: '#2563eb',   // Electric Blue
+          secondary: '#0ea5e9', // Cyan/Light Blue
+          hover: '#1d4ed8'      // Darker blue for hover
+        },
+        text: {
+          primary: '#f3f4f6',   // Off-white
+          secondary: '#9ca3af', // Gray
+          muted: '#6b7280'      // Darker gray
+        },
+        status: {
+          success: '#10b981',
+          error: '#ef4444',
+          warning: '#f59e0b'
         }
       },
-      borderWidth: {
-        '3': '3px',
-        '4': '4px',
-        '5': '5px'
-      },
-      boxShadow: {
-        'retro': '4px 4px 0px 0px rgba(0,0,0,1)',
-        'retro-inset': 'inset 2px 2px 4px rgba(0,0,0,0.5)'
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       }
     },
   },
